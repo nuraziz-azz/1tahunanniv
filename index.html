@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy Anniversary ❤️</title>
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Background -->
+    <div id="stars"></div>
+    <div id="hearts"></div>
+
+    <!-- =================== HALAMAN 1 =================== -->
+
+    <section id="welcome" class="page active">
+      <div class="welcome-card">
+        <h3>Happy Anniversary ❤️</h3>
+
+        <h1>Muhamad Nuraziz</h1>
+
+        <span class="love">❤️</span>
+
+        <h2>Nabila Salsabila</h2>
+
+        <p>Since 26 Juli 2025</p>
+
+        <button id="openBtn">Open My Heart</button>
+      </div>
+    </section>
+
+    <!-- =================== HALAMAN SURAT =================== -->
+
+    <section id="letter" class="page">
+      <div class="letter-card">
+        <h2>Untuk Nabila ❤️</h2>
+
+        <div id="typingText"></div>
+
+        <button class="nextBtn" data-next="gallery">Our Memories 📸</button>
+      </div>
+    </section>
+
+    <!-- =================== GALERI =================== -->
+
+    <section id="gallery" class="page">
+      <h2 class="title">Our Memories ❤️</h2>
+
+      <div class="slider-container">
+        <div class="slider-track">
+          <img src="img/foto1.jpg.jpeg" class="slide" />
+
+          <img src="img/foto2.jpg.jpeg" class="slide" />
+
+          <img src="img/foto3.jpg.jpeg" class="slide" />
+
+          <img src="img/foto4.jpg.jpeg" class="slide" />
+
+          <img src="img/foto5.jpg.jpeg" class="slide" />
+
+          <img src="img/foto6.jpg.jpeg" class="slide" />
+
+          <img src="img/foto7.jpg.jpeg" class="slide" />
+
+          <img src="img/foto8.jpg.jpeg" class="slide" />
+        </div>
+      </div>
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <button class="nextBtn" data-next="counter">Continue ❤️</button>
+    </section>
+
+    <!-- =================== LOVE COUNTER =================== -->
+
+    <section id="counter" class="page">
+      <div class="counter-card">
+        <h2>We've Been Together ❤️</h2>
+
+        <div class="counter">
+          <div>
+            <span id="days">0</span>
+
+            <p>Days</p>
+          </div>
+
+          <div>
+            <span id="hours">0</span>
+
+            <p>Hours</p>
+          </div>
+
+          <div>
+            <span id="minutes">0</span>
+
+            <p>Minutes</p>
+          </div>
+
+          <div>
+            <span id="seconds">0</span>
+
+            <p>Seconds</p>
+          </div>
+        </div>
+
+        <button class="nextBtn" data-next="ending">Forever ❤️</button>
+      </div>
+    </section>
+
+    <!-- =================== PENUTUP =================== -->
+
+    <section id="ending" class="page">
+      <div class="ending-card">
+        <h1>Happy Anniversary ❤️</h1>
+
+        <h2>
+          Muhamad Nuraziz
+
+          <br />
+
+          &
+
+          <br />
+
+          Nabila Salsabila
+        </h2>
+
+        <p>
+          Terima kasih sudah menjadi bagian terindah dalam hidupku.
+
+          <br /><br />
+
+          Semoga kita selalu diberikan kebahagiaan, kesehatan, dan bisa terus
+          bersama dalam setiap langkah.
+
+          <br /><br />
+
+          ❤️ I Love You Forever ❤️
+        </p>
+
+        <button id="restartBtn">Start Again</button>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>
