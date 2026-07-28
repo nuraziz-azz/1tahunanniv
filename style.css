@@ -344,44 +344,30 @@ button:hover {
    SLIDER
 ========================== */
 
-.slider-container {
-  width: 90%;
-
-  max-width: 420px;
-
-  height: 650px;
-
-  overflow: hidden;
-
-  border-radius: 25px;
-
-  position: relative;
-
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-
-  border: 2px solid rgba(255, 255, 255, 0.12);
-}
-
-.slider-track {
-  display: flex;
-
-  width: 100%;
-
-  height: 100%;
-
-  transition: transform 0.6s ease;
-}
-
-.slide {
-  width: 100%;
-
-  min-width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  user-select: none;
+.slider-container { 
+   width: 100%;
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+   -webkit-overflow-scrolling: touch;
+   margin-top: 20px; 
+} 
+.slider-container::-webkit-scrollbar { 
+   display: none; 
+} 
+.slider-track { 
+   display: flex;
+   gap: 15px;
+   width: max-content; 
+} 
+.photo { 
+   width: 260px;
+   height: 340px;
+   object-fit: cover;
+   border-radius: 20px;
+   border: 4px solid #ff4d6d;
+   flex-shrink: 0;
+   scroll-snap-align: center;
+   display: block; 
 }
 
 /* ==========================
