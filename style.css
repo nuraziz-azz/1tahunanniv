@@ -1,0 +1,807 @@
+/* ===========================================
+   ANNIVERSARY WEBSITE
+   PART 1
+   =========================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap");
+
+/* ==========================
+   RESET
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(135deg, #12001f, #250040, #35005f, #160024);
+
+  overflow: hidden;
+
+  color: white;
+
+  height: 100vh;
+}
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+#stars {
+  position: fixed;
+
+  width: 100%;
+
+  height: 100%;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: -2;
+
+  overflow: hidden;
+}
+
+#hearts {
+  position: fixed;
+
+  width: 100%;
+
+  height: 100%;
+
+  top: 0;
+
+  left: 0;
+
+  pointer-events: none;
+
+  z-index: 99;
+}
+
+/* ==========================
+   PAGE
+========================== */
+
+.page {
+  display: none;
+
+  width: 100%;
+
+  height: 100vh;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  padding: 20px;
+
+  animation: fade 0.8s;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.welcome-card,
+.letter-card,
+.counter-card,
+.ending-card {
+  width: 90%;
+
+  max-width: 700px;
+
+  padding: 45px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 0 30px rgba(255, 0, 180, 0.2);
+
+  text-align: center;
+}
+
+/* ==========================
+   WELCOME
+========================== */
+
+.welcome-card h3 {
+  font-size: 24px;
+
+  color: #ffd5ff;
+
+  margin-bottom: 15px;
+}
+
+.welcome-card h1 {
+  font-size: 60px;
+
+  font-family: "Great Vibes", cursive;
+
+  color: white;
+}
+
+.welcome-card h2 {
+  font-size: 50px;
+
+  font-family: "Great Vibes", cursive;
+
+  color: #ffd5ff;
+
+  margin-top: 10px;
+}
+
+.welcome-card p {
+  margin-top: 20px;
+
+  color: #ddd;
+
+  letter-spacing: 2px;
+}
+
+.love {
+  display: block;
+
+  font-size: 45px;
+
+  margin: 20px 0;
+
+  animation: pulse 1.5s infinite;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+button {
+  margin-top: 35px;
+
+  padding: 15px 35px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: #ff4fb2;
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  font-weight: 600;
+}
+
+button:hover {
+  transform: translateY(-3px);
+
+  background: #ff2d9c;
+
+  box-shadow: 0 0 20px #ff57c1;
+}
+
+/* ==========================
+   FADE
+========================== */
+
+@keyframes fade {
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ==========================
+   LOVE
+========================== */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff5cb8;
+
+  border-radius: 20px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+  .welcome-card,
+  .letter-card,
+  .counter-card,
+  .ending-card {
+    width: 95%;
+
+    padding: 30px;
+  }
+
+  .welcome-card h1 {
+    font-size: 45px;
+  }
+
+  .welcome-card h2 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-card h1 {
+    font-size: 35px;
+  }
+
+  .welcome-card h2 {
+    font-size: 30px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* ===========================================
+   PART 2
+   LETTER & GALLERY
+=========================================== */
+
+/* ==========================
+   LETTER
+========================== */
+
+.letter-card {
+  max-width: 750px;
+}
+
+.letter-card h2 {
+  font-size: 38px;
+
+  margin-bottom: 30px;
+
+  color: #ffd8ff;
+
+  font-family: "Great Vibes", cursive;
+}
+
+#typingText {
+  text-align: justify;
+
+  line-height: 2;
+
+  font-size: 18px;
+
+  color: #eeeeee;
+
+  min-height: 350px;
+
+  white-space: pre-wrap;
+}
+
+/* ==========================
+   GALLERY
+========================== */
+
+.title {
+  margin-bottom: 30px;
+
+  font-size: 40px;
+
+  font-family: "Great Vibes", cursive;
+
+  color: #ffd8ff;
+}
+
+/* ==========================
+   SLIDER
+========================== */
+
+.slider-container {
+  width: 90%;
+
+  max-width: 420px;
+
+  height: 650px;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  position: relative;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+  border: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.slider-track {
+  display: flex;
+
+  width: 100%;
+
+  height: 100%;
+
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  width: 100%;
+
+  min-width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  user-select: none;
+}
+
+/* ==========================
+   DOT
+========================== */
+
+.dots {
+  margin-top: 25px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.dot {
+  width: 12px;
+
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #777;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.dot:hover {
+  background: white;
+}
+
+.dot.active {
+  background: #ff69c9;
+
+  transform: scale(1.4);
+}
+
+/* ==========================
+   GALLERY BUTTON
+========================== */
+
+.gallery button {
+  margin-top: 30px;
+}
+
+/* ==========================
+   IMAGE HOVER
+========================== */
+
+.slide {
+  transition: 0.5s;
+}
+
+.slide:hover {
+  transform: scale(1.04);
+}
+
+/* ==========================
+   SLIDER SHADOW
+========================== */
+
+.slider-container::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  height: 120px;
+
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+
+  pointer-events: none;
+}
+
+/* ==========================
+   ANIMATION
+========================== */
+
+@keyframes sliderFade {
+  from {
+    opacity: 0;
+
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+.slide {
+  animation: sliderFade 0.5s;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+  .slider-container {
+    height: 520px;
+
+    max-width: 340px;
+  }
+
+  #typingText {
+    font-size: 16px;
+
+    line-height: 1.9;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-container {
+    height: 430px;
+
+    max-width: 290px;
+  }
+
+  .dot {
+    width: 10px;
+
+    height: 10px;
+  }
+}
+
+/* ==========================================
+        PART 3
+        COUNTER - ENDING - EFFECT
+========================================== */
+
+/* ==========================
+   LOVE COUNTER
+========================== */
+
+.counter-card {
+  max-width: 850px;
+}
+
+.counter-card h2 {
+  font-family: "Great Vibes", cursive;
+
+  font-size: 45px;
+
+  color: #ffd7ff;
+
+  margin-bottom: 40px;
+}
+
+.counter {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+}
+
+.counter div {
+  width: 130px;
+
+  height: 130px;
+
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  transition: 0.4s;
+}
+
+.counter div:hover {
+  transform: translateY(-10px);
+
+  box-shadow: 0 0 25px rgba(255, 105, 201, 0.4);
+}
+
+.counter span {
+  font-size: 42px;
+
+  font-weight: bold;
+
+  color: #ff7fd5;
+}
+
+.counter p {
+  margin-top: 10px;
+
+  color: white;
+}
+
+/* ==========================
+   ENDING
+========================== */
+
+.ending-card {
+  max-width: 850px;
+}
+
+.ending-card h1 {
+  font-size: 65px;
+
+  font-family: "Great Vibes", cursive;
+
+  color: #ffffff;
+
+  margin-bottom: 20px;
+}
+
+.ending-card h2 {
+  color: #ffd6ff;
+
+  margin-bottom: 25px;
+
+  line-height: 1.6;
+}
+
+.ending-card p {
+  line-height: 2;
+
+  color: #eeeeee;
+
+  font-size: 18px;
+}
+
+/* ==========================
+   STARS
+========================== */
+
+.star {
+  position: absolute;
+
+  width: 3px;
+
+  height: 3px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  animation: twinkle infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+
+    transform: scale(0.5);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.8);
+  }
+
+  100% {
+    opacity: 0.2;
+
+    transform: scale(0.5);
+  }
+}
+
+/* ==========================
+   HEART
+========================== */
+
+#hearts span {
+  user-select: none;
+}
+
+/* ==========================
+   BUTTON EFFECT
+========================== */
+
+button {
+  transition: 0.35s;
+}
+
+button:hover {
+  transform: translateY(-4px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* ==========================
+   CARD ANIMATION
+========================== */
+
+.welcome-card,
+.letter-card,
+.counter-card,
+.ending-card,
+.slider-container {
+  animation: showCard 0.8s;
+}
+
+@keyframes showCard {
+  from {
+    opacity: 0;
+
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ==========================
+   GLASS EFFECT
+========================== */
+
+.welcome-card,
+.letter-card,
+.counter-card,
+.ending-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.05)
+  );
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+  .counter {
+    gap: 15px;
+  }
+
+  .counter div {
+    width: 95px;
+
+    height: 95px;
+  }
+
+  .counter span {
+    font-size: 30px;
+  }
+
+  .counter-card h2 {
+    font-size: 34px;
+  }
+
+  .ending-card h1 {
+    font-size: 42px;
+  }
+
+  .ending-card h2 {
+    font-size: 24px;
+  }
+
+  .ending-card p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter {
+    gap: 10px;
+  }
+
+  .counter div {
+    width: 80px;
+
+    height: 80px;
+  }
+
+  .counter span {
+    font-size: 24px;
+  }
+
+  .counter p {
+    font-size: 13px;
+  }
+
+  .ending-card h1 {
+    font-size: 34px;
+  }
+
+  .ending-card p {
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+}
+
+/* ==========================================
+            THE END
+========================================== */
